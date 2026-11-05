@@ -26,7 +26,7 @@ export default function HistoryView({ onSelectScan, onOpenPreview, showToast }) 
   }, [])
 
   const handleShare = async (item) => {
-    const shareUrl = item.resume_url || `http://localhost:5173/#analysis-results?id=${item.id}`
+    const shareUrl = item.resume_url || `https://resumint-ai.netlify.app/#analysis-results?id=${item.id}`
     try {
       await navigator.clipboard.writeText(shareUrl)
       showToast('Resume link copied!')
@@ -82,13 +82,12 @@ export default function HistoryView({ onSelectScan, onOpenPreview, showToast }) 
                     </p>
                   </div>
                   <span
-                    className={`px-2 py-0.5 rounded-full text-[10px] font-bold shrink-0 ${
-                      score >= 80
+                    className={`px-2 py-0.5 rounded-full text-[10px] font-bold shrink-0 ${score >= 80
                         ? 'bg-[#DCFCE7] text-[#15803D]'
                         : score >= 65
-                        ? 'bg-[#EFF6FF] text-[#2563EB]'
-                        : 'bg-[#FEF2F2] text-[#DC2626]'
-                    }`}
+                          ? 'bg-[#EFF6FF] text-[#2563EB]'
+                          : 'bg-[#FEF2F2] text-[#DC2626]'
+                      }`}
                   >
                     {score}%
                   </span>

@@ -1,7 +1,7 @@
 // Resumint Extension API Service
 
-export const API_BASE_URL = 'http://127.0.0.1:8000/api/v1'
-export const WEB_APP_URL = 'http://localhost:5173'
+export const API_BASE_URL = 'https://resumint-ai.onrender.com/api/v1'
+export const WEB_APP_URL = 'https://resumint-ai.netlify.app'
 
 // Cross-environment Storage (Chrome Extension storage or Browser LocalStorage)
 export const storage = {

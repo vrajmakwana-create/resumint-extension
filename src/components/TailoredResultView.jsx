@@ -98,7 +98,7 @@ export default function TailoredResultView({
 
   // Share Link Handler
   const handleShare = async () => {
-    const shareUrl = resumeUrl || `http://localhost:5173/#analysis-results?id=${result.id || ''}`
+    const shareUrl = resumeUrl || `https://resumint-ai.netlify.app/#analysis-results?id=${result.id || ''}`
     try {
       await navigator.clipboard.writeText(shareUrl)
       setCopiedLink(true)
@@ -132,13 +132,12 @@ export default function TailoredResultView({
             <p className="text-xs text-[#2563EB] font-semibold">@ {company}</p>
           </div>
           <span
-            className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold shrink-0 ${
-              score >= 80
+            className={`inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-bold shrink-0 ${score >= 80
                 ? 'bg-[#DCFCE7] text-[#15803D]'
                 : score >= 65
-                ? 'bg-[#EFF6FF] text-[#2563EB]'
-                : 'bg-[#FEF2F2] text-[#DC2626]'
-            }`}
+                  ? 'bg-[#EFF6FF] text-[#2563EB]'
+                  : 'bg-[#FEF2F2] text-[#DC2626]'
+              }`}
           >
             <span>{score}% Match</span>
           </span>
@@ -194,11 +193,10 @@ export default function TailoredResultView({
         <button
           type="button"
           onClick={handleShare}
-          className={`h-10 px-2 rounded-xl border text-xs font-semibold flex items-center justify-center gap-1.5 shadow-2xs transition-all cursor-pointer ${
-            copiedLink
+          className={`h-10 px-2 rounded-xl border text-xs font-semibold flex items-center justify-center gap-1.5 shadow-2xs transition-all cursor-pointer ${copiedLink
               ? 'bg-emerald-50 border-emerald-300 text-emerald-700'
               : 'border-[#DCE5F0] bg-white hover:bg-[#F8FAFC] text-[#14243B]'
-          }`}
+            }`}
           title="Copy Shareable Link"
         >
           <span className="material-symbols-outlined text-[17px]">
